@@ -1,0 +1,61 @@
+#ScrollBox{
+overflow-y: auto;
+overflow-x: auto;
+height: 75vh;}
+
+#ContentScrollBox{
+overflow-y: auto;
+overflow-x: auto;
+height: 85vh;}
+
+.nav-tabs {
+background: #222d32;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+}
+
+.nav-tabs-custom .nav-tabs li.active {
+ border-top-color: #d73925;
+}
+
+.nav-tabs-custom .nav-tabs li a{
+  color: white;
+}
+
+.content-wrapper {
+background-color: #222d32;	
+}
+.main-sidebar {
+background-color: #222d32;
+}
+
+.box {
+background: transparent;
+border: 1px solid #d73925;
+}
+
+.box-header {
+background: #d73925;
+color: #fff;
+}
+
+.btn-box-tool {
+color: #fff !important;
+}
+
+.info-box {
+background: transparent;
+color: #fff;
+box-shadow: 0 0px 0px rgba(0,0,0,0);
+}
+
+.info-box-icon {
+
+font-size: 60px;
+line-height: 150px;
+align-self: center;
+align-items: center;
+}

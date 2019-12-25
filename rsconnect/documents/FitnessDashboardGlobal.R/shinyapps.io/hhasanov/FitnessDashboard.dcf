@@ -1,0 +1,12 @@
+name: FitnessDashboard
+title: FitnessDashboard
+username:
+account: hhasanov
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1618623
+bundleId: 2690793
+url: https://hhasanov.shinyapps.io/FitnessDashboard/
+when: 1577279055.19447
+asMultiple: FALSE
+asStatic: FALSE

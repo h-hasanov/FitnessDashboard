@@ -1,0 +1,51 @@
+server <- function(input, output, session) {
+  activitiesFileName <- "./data/Activities.xlsx"
+
+  dailyStatistics <- LoadDailyStatistics(activitiesFileName = activitiesFileName)
+  dailyExercises <- LoadDailyExercises(activitiesFileName = activitiesFileName)
+  muscleGroups <- LoadMuscleGroups(activitiesFileName = activitiesFileName)
+  measurements <- LoadMeasurements(activitiesFileName = activitiesFileName)
+  treadmillDetails <- LoadTreadmillDetails(activitiesFileName = activitiesFileName)
+  
+  output$BodyWeightPivotTable <- renderRpivotTable(getBodyWeightPivotTable(measurements = measurements))
+  output$WaistPivotTable <- renderRpivotTable(getWaistPivotTable(measurements = measurements))
+  output$BodyFatPivotTable <- renderRpivotTable(getBodyFatPivotTable(measurements = measurements))
+  output$BodyMusclePivotTable <- renderRpivotTable(getBodyMusclePivotTable(measurements = measurements))
+  output$MeasurementsPivotTable <- renderRpivotTable(getMeasurementsPivotTable(measurements = measurements))
+  
+  output$DailyHeartRatePivotTable <- renderRpivotTable(getDailyHeartRatePivotTable(dailyStatistics = dailyStatistics))
+  output$DailyStepsPivotTable <- renderRpivotTable(getDailyStepsPivotTable(dailyStatistics = dailyStatistics))
+  output$DailyCaloriesTotalPivotTable <- renderRpivotTable(getDailyCaloriesTotalPivotTable(dailyStatistics = dailyStatistics))
+  output$DailyCaloriesActivityPivotTable <- renderRpivotTable(getDailyCaloriesActivityPivotTable(dailyStatistics = dailyStatistics))
+  output$DailySedentaryMinutesPivotTable <- renderRpivotTable(getDailySedentaryMinutesPivotTable(dailyStatistics = dailyStatistics))
+  output$DailyVeryActiveMinutesPivotTable <- renderRpivotTable(getDailyVeryActiveMinutesPivotTable(dailyStatistics = dailyStatistics))
+  output$DailyStatisticsPivotTable <- renderRpivotTable(getAllStatisticsPivotTable(dailyStatistics = dailyStatistics))
+  
+  output$DailyExercisesPivotTable <- renderRpivotTable(getAllActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyWeightsPivotTable <- renderRpivotTable(getWeightActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyTreadmillPivotTable <- renderRpivotTable(getTreadmillActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyWalkingPivotTable <- renderRpivotTable(getWalkingActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyOutdoorRunningPivotTable <- renderRpivotTable(getOutdoorRunningActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyBikePivotTable <- renderRpivotTable(getBikeActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyGenericWorkoutPivotTable <- renderRpivotTable(getGenericWorkoutActivitiesPivotTable(dailyExercises = dailyExercises))
+  output$DailyEllipticalPivotTable <- renderRpivotTable(getEllipticalActivitiesPivotTable(dailyExercises = dailyExercises))
+  
+  output$MuscleGroupFrequencyTable <- renderRpivotTable(getMuscleGroupsFrequencyTable(muscleGroups = muscleGroups))
+  output$ChestPivotTable <- renderRpivotTable(getChestPivotTable(muscleGroups = muscleGroups))
+  output$BicepsPivotTable <- renderRpivotTable(getBicepsPivotTable(muscleGroups = muscleGroups))
+  output$BackPivotTable <- renderRpivotTable(getBackPivotTable(muscleGroups = muscleGroups))
+  output$AbsPivotTable <- renderRpivotTable(getAbsPivotTable(muscleGroups = muscleGroups))
+  output$TricepsPivotTable <- renderRpivotTable(getTricepsPivotTable(muscleGroups = muscleGroups))
+  output$ShouldersPivotTable <- renderRpivotTable(getShouldersPivotTable(muscleGroups = muscleGroups))
+  output$LowerBackPivotTable <- renderRpivotTable(getLowerBackPivotTable(muscleGroups = muscleGroups))
+  output$GymAttendedPivotTable <- renderRpivotTable(getGymAttendedPivotTable(muscleGroups = muscleGroups))
+  output$CardioPivotTable <- renderRpivotTable(getCardioPivotTable(muscleGroups = muscleGroups))
+  output$MuscleGroupsPivotTable <- renderRpivotTable(getMuscleGroupsPivotTable(muscleGroups = muscleGroups))
+  
+  output$TreadmillDistancePivotTable <- renderRpivotTable(getTreadmillDistancePivotTable(treadmillDetails = treadmillDetails))
+  output$TreadmillDurationPivotTable <- renderRpivotTable(getTreadmillDurationPivotTable(treadmillDetails = treadmillDetails))
+  output$TreadmillSpeedPivotTable <- renderRpivotTable(getTreadmillSpeedPivotTable(treadmillDetails = treadmillDetails))
+  output$TreadmillCaloriesPivotTable <- renderRpivotTable(getTreadmillCaloriesPivotTable(treadmillDetails = treadmillDetails))
+  output$TreadmillCaloriesPerMinutePivotTable <- renderRpivotTable(getTreadmillCaloriesPerMinutePivotTable(treadmillDetails = treadmillDetails))
+  output$TreadmillDetailsPivotTable <- renderRpivotTable(getTreadmillDetailsPivotTable(treadmillDetails = treadmillDetails))
+}
